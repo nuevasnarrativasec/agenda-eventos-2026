@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200..900&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="./css/style.css?v3">
+    <link rel="stylesheet" href="./css/style.css?v4">
 </head>
 <body>
     <!-- Header -->
@@ -1017,90 +1017,138 @@
             observer.observe(section);
         });
 
-        // Drag to scroll functionality
+        // Drag to scroll functionality - versión mejorada
         const cardsContainers = document.querySelectorAll('.cards-container');
         
         cardsContainers.forEach(container => {
             let isDown = false;
+            let isDragging = false;
             let startX;
             let scrollLeft;
-            let velX = 0;
+            let lastX;
+            let lastTime;
+            let velocity = 0;
             let momentumID;
+            const DRAG_THRESHOLD = 5; // Píxeles mínimos para considerar drag
+
+            function getX(e) {
+                return e.type.includes('mouse') ? e.pageX : e.touches[0].pageX;
+            }
+
+            function startDrag(e) {
+                isDown = true;
+                isDragging = false;
+                startX = getX(e);
+                lastX = startX;
+                lastTime = Date.now();
+                scrollLeft = container.scrollLeft;
+                velocity = 0;
+                cancelMomentumTracking();
+                
+                // Desactivar scroll-snap durante el drag
+                container.style.scrollSnapType = 'none';
+            }
+
+            function moveDrag(e) {
+                if (!isDown) return;
+                
+                const x = getX(e);
+                const deltaX = x - startX;
+                
+                // Solo activar modo dragging si se movió más del threshold
+                if (!isDragging && Math.abs(deltaX) > DRAG_THRESHOLD) {
+                    isDragging = true;
+                    container.classList.add('is-dragging');
+                }
+                
+                if (!isDragging) return;
+                
+                // Prevenir selección de texto y comportamiento por defecto
+                if (e.cancelable) {
+                    e.preventDefault();
+                }
+                
+                // Calcular velocidad basada en tiempo real
+                const now = Date.now();
+                const dt = now - lastTime;
+                if (dt > 0) {
+                    velocity = (x - lastX) / dt * 16; // Normalizar a ~60fps
+                }
+                lastX = x;
+                lastTime = now;
+                
+                // Aplicar scroll
+                container.scrollLeft = scrollLeft - deltaX;
+            }
+
+            function endDrag() {
+                if (!isDown) return;
+                isDown = false;
+                
+                if (isDragging) {
+                    isDragging = false;
+                    container.classList.remove('is-dragging');
+                    
+                    // Solo aplicar momentum si hay velocidad significativa
+                    if (Math.abs(velocity) > 0.5) {
+                        beginMomentumTracking();
+                    } else {
+                        restoreScrollSnap();
+                    }
+                } else {
+                    restoreScrollSnap();
+                }
+            }
+
+            function restoreScrollSnap() {
+                // Restaurar scroll-snap con un pequeño delay para suavizar
+                setTimeout(() => {
+                    container.style.scrollSnapType = '';
+                }, 100);
+            }
 
             // Mouse events
-            container.addEventListener('mousedown', (e) => {
-                isDown = true;
-                container.classList.add('is-dragging');
-                startX = e.pageX - container.offsetLeft;
-                scrollLeft = container.scrollLeft;
-                cancelMomentumTracking();
-            });
+            container.addEventListener('mousedown', startDrag);
+            container.addEventListener('mousemove', moveDrag);
+            container.addEventListener('mouseup', endDrag);
+            container.addEventListener('mouseleave', endDrag);
 
-            container.addEventListener('mouseleave', () => {
-                if (isDown) {
-                    isDown = false;
-                    container.classList.remove('is-dragging');
-                    beginMomentumTracking();
-                }
-            });
+            // Touch events - usar passive: false para poder prevenir default
+            container.addEventListener('touchstart', startDrag, { passive: true });
+            container.addEventListener('touchmove', moveDrag, { passive: false });
+            container.addEventListener('touchend', endDrag);
+            container.addEventListener('touchcancel', endDrag);
 
-            container.addEventListener('mouseup', () => {
-                isDown = false;
-                container.classList.remove('is-dragging');
-                beginMomentumTracking();
-            });
-
-            container.addEventListener('mousemove', (e) => {
-                if (!isDown) return;
-                e.preventDefault();
-                const x = e.pageX - container.offsetLeft;
-                const walk = (x - startX) * 1.5;
-                const prevScrollLeft = container.scrollLeft;
-                container.scrollLeft = scrollLeft - walk;
-                velX = container.scrollLeft - prevScrollLeft;
-            });
-
-            // Touch events
-            container.addEventListener('touchstart', (e) => {
-                isDown = true;
-                container.classList.add('is-dragging');
-                startX = e.touches[0].pageX - container.offsetLeft;
-                scrollLeft = container.scrollLeft;
-                cancelMomentumTracking();
-            }, { passive: true });
-
-            container.addEventListener('touchend', () => {
-                isDown = false;
-                container.classList.remove('is-dragging');
-                beginMomentumTracking();
-            });
-
-            container.addEventListener('touchmove', (e) => {
-                if (!isDown) return;
-                const x = e.touches[0].pageX - container.offsetLeft;
-                const walk = (x - startX) * 1.5;
-                const prevScrollLeft = container.scrollLeft;
-                container.scrollLeft = scrollLeft - walk;
-                velX = container.scrollLeft - prevScrollLeft;
-            }, { passive: true });
-
-            // Momentum scrolling
+            // Momentum scrolling mejorado
             function beginMomentumTracking() {
                 cancelMomentumTracking();
                 momentumID = requestAnimationFrame(momentumLoop);
             }
 
             function cancelMomentumTracking() {
-                cancelAnimationFrame(momentumID);
+                if (momentumID) {
+                    cancelAnimationFrame(momentumID);
+                    momentumID = null;
+                }
             }
 
             function momentumLoop() {
-                container.scrollLeft += velX;
-                velX *= 0.95;
-                if (Math.abs(velX) > 0.5) {
+                // Aplicar velocidad invertida (porque scrollLeft aumenta hacia la derecha)
+                container.scrollLeft -= velocity;
+                
+                // Fricción más suave
+                velocity *= 0.92;
+                
+                // Continuar hasta que la velocidad sea muy baja
+                if (Math.abs(velocity) > 0.3) {
                     momentumID = requestAnimationFrame(momentumLoop);
+                } else {
+                    restoreScrollSnap();
                 }
             }
+
+            // Prevenir el drag de imágenes nativo
+            container.addEventListener('dragstart', (e) => e.preventDefault());
         });
     </script>
 </body>

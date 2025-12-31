@@ -248,7 +248,10 @@
             scrollbar-width: thin;
             scrollbar-color: var(--color-header) transparent;
             cursor: grab;
-            user-select: none;
+            -webkit-user-select: none;
+            /* Mejoras de rendimiento */
+            will-change: scroll-position;
+            overscroll-behavior-x: contain;
         }
 
         .cards-container:active {
@@ -277,6 +280,32 @@
             border-radius: 4px;
         }
 
+         /* Ocultar scrollbar en móvil para mejor UX táctil */
+        @media (max-width: 768px) {
+            .cards-container {
+                scrollbar-width: none;
+                -ms-overflow-style: none;
+            }
+            .cards-container::-webkit-scrollbar {
+                display: none;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .cards-container::-webkit-scrollbar {
+                height: 8px;
+            }
+
+            .cards-container::-webkit-scrollbar-track {
+                background: transparent;
+            }
+
+            .cards-container::-webkit-scrollbar-thumb {
+                background-color: var(--color-header);
+                border-radius: 4px;
+            }
+        }
+
         /* Event Card */
         .event-card {
             border-radius: 20px;
@@ -291,6 +320,9 @@
             flex-direction: column;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
             overflow: hidden;
+            /* Prevenir selección durante drag */
+            -webkit-touch-callout: none;
+            touch-action: pan-x;
         }
 
         .event-card:hover {
