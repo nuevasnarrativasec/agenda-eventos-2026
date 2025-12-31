@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200..900&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/style.css?v2">
 </head>
 <body>
     <!-- Header -->
@@ -131,7 +131,7 @@
 
         <!-- Febrero -->
         <section class="month-section" id="febrero">
-            <div class="month-sidebar"></div>
+            <div class="month-sidebar month-febrero"></div>
             <div class="month-content">
                 <div class="month-header">
                     <h2 class="month-title">Febrero</h2>
@@ -152,31 +152,48 @@
                         </ul>
                     </article>
                     
-                    <article class="event-card event-card--highlight-yellow event-card--with-image">
+                    <article class="event-card event-card--highlight-yellow event-card--with-image relative">
                         <span class="card-day">2</span>
                         <h3 class="card-title">Fiesta de la Candelaria.</h3>
-                        <div class="card-image-wrapper">
+                        <img src="./img/bg-febrero-1.png" alt="" width="100%" class="bg-febrero-1">
+                        <!--<div class="card-image-wrapper">
                             <img src="https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=400&h=300&fit=crop&auto=format" alt="Fiesta de la Candelaria">
-                        </div>
+                        </div>-->
                     </article>
                     
                     <article class="event-card">
                         <span class="card-day">3-5</span>
                         <h3 class="card-title">Copa Libertadores 2026.</h3>
                     </article>
+
+                    <article class="event-card">
+                        <span class="card-day">3</span>
+                        <h3 class="card-title">Se funda Pixar, 40 aniversario (1986).</h3>
+                    </article>
                     
-                    <article class="event-card event-card--highlight-orange">
-                        <span class="card-day">14</span>
-                        <h3 class="card-title">San Valentín</h3>
+                    <article class="event-card event-card--highlight-yellow event-card--with-image relative">
+                        <span class="card-day">7</span>
                         <ul class="card-events">
-                            <li>Día del amor y la amistad.</li>
+                            <li>Día Nacional del Pisco Sour.</li>
+                            <li>100 años de Alberto Vargas.</li>
                         </ul>
+                        <img src="./img/bg-febrero-2.png" alt="" width="100%" class="bg-febrero-2">
+                        <!--<div class="card-image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=400&h=300&fit=crop&auto=format" alt="Fiesta de la Candelaria">
+                        </div>-->
                     </article>
                     
                     <article class="event-card">
-                        <span class="card-day">22</span>
+                        <span class="card-day">8</span>
                         <ul class="card-events">
-                            <li>Ceremonia de los Premios Oscar.</li>
+                            <li>Super Bowl LX.</li>
+                        </ul>
+                    </article>
+
+                    <article class="event-card">
+                        <span class="card-day">14</span>
+                        <ul class="card-events">
+                            <li>Día de San Valentín.</li>
                         </ul>
                     </article>
                 </div>
@@ -185,7 +202,7 @@
 
         <!-- Marzo (ejemplo para replicar) -->
         <section class="month-section" id="marzo">
-            <div class="month-sidebar"></div>
+            <div class="month-sidebar month-marzo"></div>
             <div class="month-content">
                 <div class="month-header">
                     <h2 class="month-title">Marzo</h2>
@@ -194,23 +211,50 @@
                 
                 <div class="cards-container">
                     <article class="event-card event-card--highlight-orange">
-                        <span class="card-day">8</span>
-                        <h3 class="card-title">Día Internacional de la Mujer</h3>
+                        <h3 class="card-title">Primera quincena: Reporte de inflación (el primero del año).</h3>
                     </article>
                     
                     <article class="event-card">
-                        <span class="card-day">14</span>
+                        <span class="card-day">5</span>
                         <ul class="card-events">
-                            <li>Día del número Pi.</li>
-                            <li>145 años de Albert Einstein.</li>
+                            <li>Clásico Mundial de Beisbol 2026.</li>
                         </ul>
                     </article>
-                    
-                    <article class="event-card event-card--highlight-yellow">
-                        <span class="card-day">21</span>
-                        <h3 class="card-title">Equinoccio de otoño</h3>
+
+                    <article class="event-card">
+                        <span class="card-day">8</span>
                         <ul class="card-events">
-                            <li>Inicio del otoño en el hemisferio sur.</li>
+                            <li>Día Internacional de la Mujer.</li>
+                        </ul>
+                    </article>
+
+                    <article class="event-card">
+                        <span class="card-day">13</span>
+                        <ul class="card-events">
+                            <li>Fecha límite para resolver apelaciones sobre exclusiones, tachas y candidaturas de las elecciones generales.</li>
+                        </ul>
+                    </article>
+
+                    <article class="event-card">
+                        <span class="card-day">14</span>
+                        <ul class="card-events">
+                            <li>Fecha límite para la inscripción oficial y proclamación de candidaturas definitivas de las elecciones generales.</li>
+                        </ul>
+                    </article>
+
+                    <article class="event-card event-card--highlight-orange event-card--with-image relative">
+                        <span class="card-day">15</span>
+                        <h3 class="card-title">Entrega de <br>los premios Oscar</h3>
+                        <img src="./img/bg-marzo-1.png" alt="" width="100%" class="bg-marzo-1">
+                        <!--<div class="card-image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=400&h=300&fit=crop&auto=format" alt="Globos de Oro">
+                        </div>-->
+                    </article>
+                    
+                    <article class="event-card">
+                        <span class="card-day">23 al 31</span>
+                        <ul class="card-events">
+                            <li>Fecha FIFA</li>
                         </ul>
                     </article>
                 </div>
@@ -219,7 +263,7 @@
 
         <!-- Abril -->
         <section class="month-section" id="abril">
-            <div class="month-sidebar"></div>
+            <div class="month-sidebar month-abril"></div>
             <div class="month-content">
                 <div class="month-header">
                     <h2 class="month-title">Abril</h2>
@@ -227,27 +271,84 @@
                 </div>
                 
                 <div class="cards-container">
+                    <article class="event-card event-card--highlight-orange">
+                        <h3 class="card-title">Informe de actualización de proyecciones macroeconómicas (actualización del Marco Macroeconómico Multianual).</h3>
+                    </article>
+                    
+                    <article class="event-card red">
+                        <span class="card-day">2 y 3</span>
+                        <ul class="card-events">
+                            <li>Jueves y Viernes santo.</li>
+                        </ul>
+                    </article>
+                    
                     <article class="event-card">
                         <span class="card-day">5</span>
-                        <h3 class="card-title">Domingo de Ramos</h3>
+                        <ul class="card-events">
+                            <li>Domingo de Resurrección.</li>
+                            <li>Elecciones Presidenciales Costa Rica (2da vuelta).</li>
+                        </ul>
                     </article>
-                    
-                    <article class="event-card event-card--highlight-yellow">
+
+                    <article class="event-card">
+                        <span class="card-day">9 al 12</span>
+                        <ul class="card-events">
+                            <li>Masters del Augusta, PGA Tour Golf.</li>
+                        </ul>
+                    </article>
+
+                    <article class="event-card event-card--highlight-orange event-card--with-image relative">
                         <span class="card-day">12</span>
-                        <h3 class="card-title">Domingo de Pascua</h3>
+                        <ul class="card-events">
+                            <li>Primera vuelta electoral de las elecciones generales para elegir al presidente, vicepresidentes, 60 senadores, 130 diputados y representantes al Parlamento Andino.</li>
+                        </ul>
+                        <img src="./img/bg-abril-1.png" alt="" width="100%" class="bg-abril-1">
                     </article>
-                    
-                    <article class="event-card event-card--highlight-orange">
-                        <span class="card-day">22</span>
-                        <h3 class="card-title">Día de la Tierra</h3>
+
+                    <article class="event-card">
+                        <span class="card-day">23</span>
+                        <ul class="card-events">
+                            <li>Día Internacional del Libro y del Derecho de Autor.</li>
+                        </ul>
                     </article>
+
+                    <article class="event-card">
+                        <span class="card-day">26</span>
+                        <ul class="card-events">
+                            <li>40 años del accidente en Chernobyl.</li>
+                        </ul>
+                    </article>
+
+                    <article class="event-card">
+                        <span class="card-day">27 al 29</span>
+                        <ul class="card-events">
+                            <li>EXPOCOBRE 2026</li>
+                        </ul>
+                    </article>
+
+                    <article class="event-card event-card--highlight-orange event-card--with-image relative">
+                        <span class="card-day">Finales de abril</span>
+                        <ul class="card-events">
+                            <li>Premios Luces.</li>
+                        </ul>
+                        <img src="./img/bg-abril-2.png" alt="" width="100%" class="bg-abril-2">
+                    </article>
+
+                    <article class="event-card event-card--highlight-orange event-card--with-image relative">
+                        <span class="card-day">Abril</span>
+                        <ul class="card-events">
+                            <li>Estreno de la tercera temporada de Euphoria.</li>
+                        </ul>
+                        <img src="./img/bg-abril-3.png" alt="" width="100%" class="bg-abril-3">
+                    </article>
+
                 </div>
             </div>
         </section>
 
         <!-- Mayo -->
         <section class="month-section" id="mayo">
-            <div class="month-sidebar"></div>
+            <div class="month-sidebar month-mayo"></div>
             <div class="month-content">
                 <div class="month-header">
                     <h2 class="month-title">Mayo</h2>
@@ -255,7 +356,7 @@
                 </div>
                 
                 <div class="cards-container">
-                    <article class="event-card event-card--highlight-yellow">
+                    <article class="event-card red">
                         <span class="card-day">1</span>
                         <h3 class="card-title">Día del Trabajo</h3>
                     </article>
@@ -264,13 +365,66 @@
                         <span class="card-day">10</span>
                         <h3 class="card-title">Día de la Madre</h3>
                     </article>
+
+                    <article class="event-card">
+                        <span class="card-day">18</span>
+                        <h3 class="card-title">Día Internacional de los Museos</h3>
+                    </article>
+
+                    <article class="event-card event-card--highlight-orange event-card--with-image relative">
+                        <span class="card-day">21</span>
+                        <ul class="card-events">
+                            <li>Dia1 Summit.</li>
+                        </ul>
+                        <img src="./img/bg-mayo-1.png" alt="" width="100%" class="bg-mayo-1">
+                    </article>
+
+                    <article class="event-card">
+                        <span class="card-day">23-24</span>
+                        <ul class="card-events">
+                            <li>Concierto de Soda Stereo.</li>
+                        </ul>
+                    </article>
+
+                    <article class="event-card">
+                        <span class="card-day">24</span>
+                        <ul class="card-events">
+                            <li>Roland Garros Open.</li>
+                            <li>Maratón de Lima 42K</li>
+                        </ul>
+                    </article>
+
+                    <article class="event-card">
+                        <span class="card-day">26 al 28</span>
+                        <ul class="card-events">
+                            <li>SIMPOSIO - XVI</li>
+                            <li>
+                                Encuentro Internacional de Minería
+                            </li>
+                        </ul>
+                    </article>
+
+                    <article class="event-card event-card--highlight-orange event-card--with-image relative">
+                        <span class="card-day">30</span>
+                        <ul class="card-events">
+                            <li>Final de la Champions League.</li>
+                        </ul>
+                        <img src="./img/bg-mayo-2.png" alt="" width="100%" class="bg-mayo-2">
+                    </article>
+
+                    <article class="event-card">
+                        <span class="card-day">31</span>
+                        <ul class="card-events">
+                            <li>Elecciones presidenciales de Colombia</li>
+                        </ul>
+                    </article>
                 </div>
             </div>
         </section>
 
         <!-- Junio -->
         <section class="month-section" id="junio">
-            <div class="month-sidebar"></div>
+            <div class="month-sidebar month-junio"></div>
             <div class="month-content">
                 <div class="month-header">
                     <h2 class="month-title">Junio</h2>
@@ -278,22 +432,111 @@
                 </div>
                 
                 <div class="cards-container">
-                    <article class="event-card event-card--highlight-orange">
-                        <span class="card-day">11</span>
-                        <h3 class="card-title">Inicio Copa América 2026</h3>
+                    <article class="event-card event-card--highlight-orange event-card--with-image relative">                        
+                        <h3 class="card-title">Finales de la NBA</h3>
+                        <img src="./img/bg-junio-1.png" alt="" width="100%" class="bg-junio-1">
                     </article>
                     
                     <article class="event-card">
-                        <span class="card-day">21</span>
-                        <h3 class="card-title">Solsticio de invierno</h3>
+                        <span class="card-day" style="color: red;">7</span>
+                        <ul class="card-events">
+                            <li style="color: red;">Batalla de Arica y Día de la bandera.</li>
+                            <li>
+                                Eventual segunda vuelta presidencial (si ningún candidato obtiene más del 50% en la primera vuelta).
+                            </li>
+                        </ul>
                     </article>
+
+                    <article class="event-card">
+                        <span class="card-day">10</span>
+                        <ul class="card-events">
+                            <li>100 años de la muerte del arquitecto Antoni Gaudí (1926). Finalizará la construcción de la Sagrada Familia.</li>
+                        </ul>
+                    </article>
+
+                    <article class="event-card">
+                        <span class="card-day">11</span>
+                        <ul class="card-events">
+                            <li>Inicio Copa del Mundo FIFA 2026.</li>
+                        </ul>
+                    </article>
+
+                    <article class="event-card">
+                        <span class="card-day">14</span>
+                        <ul class="card-events">
+                            <li>40 años sin Borges.</li>
+                        </ul>
+                    </article>
+
+                    <article class="event-card">
+                        <span class="card-day">Quincena de junio</span>
+                        <ul class="card-events">
+                            <li>Reporte de inflación.</li>
+                            <li>Definición Apertura Liga 1.</li>
+                        </ul>
+                    </article>
+
+                    <article class="event-card">
+                        <span class="card-day">16</span>
+                        <ul class="card-events">
+                            <li>Fecha máxima para la presentación de solicitudes de inscripción de fórmulas y listas de candidatos para las elecciones regionales y municipales.</li>
+                        </ul>
+                    </article>
+
+                    <article class="event-card">
+                        <span class="card-day">19</span>
+                        <ul class="card-events">
+                            <li>Estreno de Toy Story 5</li>
+                        </ul>
+                    </article>
+
+                    <article class="event-card">
+                        <span class="card-day">21</span>
+                        <ul class="card-events">
+                            <li>Elecciones Presidenciales en Colombia (segunda vuelta).</li>
+                            <li>Día del Padre.</li>
+                        </ul>
+                    </article>
+
+                    <article class="event-card">
+                        <span class="card-day">24 al 26</span>
+                        <ul class="card-events">
+                            <li>World Mining Congress 2026.</li>
+                        </ul>
+                    </article>
+
+                    <article class="event-card event-card--highlight-orange event-card--with-image relative">                        
+                        <span class="card-day">26</span>
+                        <ul class="card-events">
+                            <li>Estreno de Supergirl.</li>
+                        </ul>
+                        <img src="./img/bg-junio-2.png" alt="" width="100%" class="bg-junio-2">
+                    </article>
+
+                    <article class="event-card">
+                        <span class="card-day">28</span>
+                        <ul class="card-events">
+                            <li>100 cumpleaños del nacimiento del director y comediante Mel Brooks (1926).</li>
+                        </ul>
+                    </article>
+
+                    <article class="event-card">
+                        <span class="card-day" style="color: red;">29</span>
+                        <ul class="card-events">
+                            <li style="color: red;">Día de San Pedro y San Pablo.</li>
+                            <li>
+                                Wimbledom Open.
+                            </li>
+                        </ul>
+                    </article>
+
                 </div>
             </div>
         </section>
 
         <!-- Julio -->
         <section class="month-section" id="julio">
-            <div class="month-sidebar"></div>
+            <div class="month-sidebar month-julio"></div>
             <div class="month-content">
                 <div class="month-header">
                     <h2 class="month-title">Julio</h2>
@@ -301,17 +544,71 @@
                 </div>
                 
                 <div class="cards-container">
-                    <article class="event-card event-card--highlight-yellow">
-                        <span class="card-day">28-29</span>
-                        <h3 class="card-title">Fiestas Patrias</h3>
+                    <article class="event-card">
+                        <span class="card-day">Julio - Agosto</span>
+                        <ul class="card-events">
+                            <li>Elección del nuevo Directorio del Banco Central de Reserva.</li>
+                            <li>Feria Internacional del libro de Lima.</li>
+                            <li>Mamma Mía en Lima.</li>
+                        </ul>
                     </article>
+                    
+                    <article class="event-card">
+                        <span class="card-day">4</span>
+                        <ul class="card-events">
+                            <li>250 años de la Declaración de Independencia de EE. UU.</li>
+                            <li>200 años de la muerte de los presidentes Thomas Jefferson y John Adams.</li>
+                        </ul>
+                    </article>
+
+                    <article class="event-card">
+                        <span class="card-day">Mediados de julio</span>
+                        <ul class="card-events">
+                            <li>Inicio Clausura Liga 1 - 2026</li>
+                        </ul>
+                    </article>
+
+                    <article class="event-card">
+                        <span class="card-day">17</span>
+                        <ul class="card-events">
+                            <li>Esreno de La Odisea (película de Cristopher Nolan).</li>
+                        </ul>
+                    </article>
+
+                    <article class="event-card event-card--highlight-orange event-card--with-image relative">
+                        <span class="card-day">19</span>
+                        <h3 class="card-title">Final Copa del Mundo <br> FIFA 2026.</h3>
+                        <img src="./img/bg-julio-1.png" alt="" width="100%" class="bg-julio-1">
+                    </article>
+
+                    <article class="event-card">
+                        <span class="card-day">20</span>
+                        <ul class="card-events">
+                            <li>50 años del Aterrizaje de la Viking 1 en Marte: Primeras misiones exitosas de aterrizaje en el planeta rojo y los primeros experimentos de detección de vida.</li>
+                        </ul>
+                    </article>
+
+                    <article class="event-card">
+                        <span class="card-day">28</span>
+                        <ul class="card-events">
+                            <li>Toma de mando del nuevo presidente/a de la República.</li>
+                        </ul>
+                    </article>
+
+                    <article class="event-card red">
+                        <span class="card-day">28 y 29</span>
+                        <ul class="card-events">
+                            <li>Fiestas Patrias.</li>
+                        </ul>
+                    </article>                   
+
                 </div>
             </div>
         </section>
 
         <!-- Agosto -->
         <section class="month-section" id="agosto">
-            <div class="month-sidebar"></div>
+            <div class="month-sidebar month-agosto"></div>
             <div class="month-content">
                 <div class="month-header">
                     <h2 class="month-title">Agosto</h2>
@@ -319,22 +616,67 @@
                 </div>
                 
                 <div class="cards-container">
-                    <article class="event-card">
+
+                    <article class="event-card event-card--highlight-orange">
+                        <ul class="card-events">
+                            <li>Marco Macroeconómico Multianual 2027 - 2030.</li>
+                            <li><b>Festival de Cine de Lima.</b></li>
+                        </ul>
+                    </article>
+
+                    <article class="event-card red">
                         <span class="card-day">6</span>
-                        <h3 class="card-title">Día de Hiroshima</h3>
+                        <ul class="card-events">
+                            <li>Batalla de Junín.</li>
+                        </ul>
+                    </article>
+
+                    <article class="event-card">
+                        <span class="card-day">9</span>
+                        <ul class="card-events">
+                            <li>Centenario de Blanca Varela.</li>
+                        </ul>
+                    </article>
+
+                    <article class="event-card">
+                        <span class="card-day">13</span>
+                        <ul class="card-events">
+                            <li>100 años del nacimiento del líder político Fidel Castro (1926).</li>
+                        </ul>
                     </article>
                     
-                    <article class="event-card event-card--highlight-orange">
-                        <span class="card-day">30</span>
-                        <h3 class="card-title">Día de Santa Rosa de Lima</h3>
+                    <article class="event-card event-card--highlight-orange event-card--with-image relative">
+                        <span class="card-day">Mediados de agosto</span>
+                        <ul class="card-events">
+                            <li>Premios Somos.</li>
+                        </ul>
+                        <img src="./img/bg-agosto-1.png" alt="" width="100%" class="bg-agosto-1">
                     </article>
+
+                    <article class="event-card">
+                        <span class="card-day" style="color: red;">30</span>
+                        <ul class="card-events">
+                            <li style="color: red;">Festividad de Santa Rosa de Lima.</li>
+                            <li>
+                               Elecciones Presidenciales Haití.
+                            </li>
+                        </ul>
+                    </article>
+
+                    <article class="event-card">
+                        <span class="card-day">31</span>
+                        <ul class="card-events">
+                            <li>Tenis US Open.</li>
+                        </ul>
+                    </article>
+
                 </div>
             </div>
         </section>
 
         <!-- Septiembre -->
         <section class="month-section" id="septiembre">
-            <div class="month-sidebar"></div>
+            <div class="month-sidebar month-setiembre"></div>
             <div class="month-content">
                 <div class="month-header">
                     <h2 class="month-title">Septiembre</h2>
@@ -342,17 +684,57 @@
                 </div>
                 
                 <div class="cards-container">
-                    <article class="event-card event-card--highlight-yellow">
-                        <span class="card-day">21</span>
-                        <h3 class="card-title">Día de la Primavera</h3>
+
+                    <article class="event-card">
+                        <span class="card-day">9</span>
+                        <ul class="card-events">
+                            <li>50 años de la muerte de Mao.</li>
+                        </ul>
                     </article>
+
+                    <article class="event-card event-card--highlight-orange event-card--with-image relative">
+                        <span class="card-day">13</span>
+                        <ul class="card-events">
+                            <li>Aniversario 40 de Somos.</li>
+                        </ul>
+                        <img src="./img/bg-setiembre-1.png" alt="" width="100%" class="bg-setiembre-1">
+                    </article>
+
+                    <article class="event-card event-card--highlight-orange event-card--with-image relative">
+                        <span class="card-day">14</span>
+                        <ul class="card-events">
+                            <li>Premios Emmy.</li>
+                        </ul>
+                        <img src="./img/bg-setiembre-2.png" alt="" width="100%" class="bg-setiembre-2">
+                    </article>
+
+                    <article class="event-card">
+                        <span class="card-day">Quincena</span>
+                        <ul class="card-events">
+                            <li>Reporte <br> de inflación.</li>
+                        </ul>
+                    </article>
+
+                    <article class="event-card">
+                        <span class="card-day">21</span>
+                        <ul class="card-events">
+                            <li>Fecha FIFA.</li>
+                        </ul>
+                    </article>
+
+                    <article class="event-card">
+                        <ul class="card-events">
+                            <li><b style="font-weight: 800;">Se espera la misión Artemis 3 a la luna.</b></li>
+                        </ul>
+                    </article>
+
                 </div>
             </div>
         </section>
 
         <!-- Octubre -->
         <section class="month-section" id="octubre">
-            <div class="month-sidebar"></div>
+            <div class="month-sidebar month-octubre"></div>
             <div class="month-content">
                 <div class="month-header">
                     <h2 class="month-title">Octubre</h2>
@@ -360,22 +742,74 @@
                 </div>
                 
                 <div class="cards-container">
-                    <article class="event-card event-card--highlight-orange">
-                        <span class="card-day">8</span>
-                        <h3 class="card-title">Combate de Angamos</h3>
+                    <article class="event-card event-card--highlight-orange event-card--with-image relative">
+                        <span class="card-day">3</span>
+                        <ul class="card-events">
+                            <li>800 años de la muerte de San Francisco de Asís.</li>
+                        </ul>
+                        <img src="./img/bg-octubre-1.png" alt="" width="100%" class="bg-octubre-1">
                     </article>
                     
                     <article class="event-card">
-                        <span class="card-day">31</span>
-                        <h3 class="card-title">Halloween</h3>
+                        <span class="card-day">4</span>
+                        <ul class="card-events">
+                            <li>Elecciones regionales y municipales en el Perú.</li>
+                            <li>Elecciones Presidenciales Brasil - Primera vuelta.</li>
+                        </ul>
                     </article>
+
+                    <article class="event-card red">
+                        <span class="card-day">8</span>
+                        <ul class="card-events">
+                            <li>Combate de Angamos.</li>
+                        </ul>
+                    </article>
+
+                    <article class="event-card event-card--highlight-orange event-card--with-image relative">
+                        <span class="card-day">Segunda semana</span>
+                        <ul class="card-events">
+                            <li>Se anuncian los ganadores diferentes Premios Nobel.</li>
+                        </ul>
+                        <img src="./img/bg-octubre-2.png" alt="" width="100%" class="bg-octubre-2">
+                    </article>
+
+                    <article class="event-card">
+                        <span class="card-day">17</span>
+                        <ul class="card-events">
+                            <li>Concierto de Iron Maiden.</li>
+                        </ul>
+                    </article>
+
+                    <article class="event-card">
+                        <span class="card-day">25</span>
+                        <ul class="card-events">
+                            <li>Elecciones Presidenciales Brasil - Segunda vuelta.</li>
+                        </ul>
+                    </article>
+
+                    <article class="event-card">
+                        <span class="card-day">28</span>
+                        <ul class="card-events">
+                            <li>300 años de la publicación de "Los viajes de Gulliver" de Jonathan Swift (1726).</li>
+                        </ul>
+                    </article>
+
+                    <article class="event-card">
+                        <span class="card-day">31</span>
+                        <ul class="card-events">
+                            <li>Día de la Canción Criolla.</li>
+                            <li>Halloween.</li>
+                            <li>100 años de la muerte del escapista Harry Houdini (1926).</li>
+                        </ul>
+                    </article>
+
                 </div>
             </div>
         </section>
 
         <!-- Noviembre -->
         <section class="month-section" id="noviembre">
-            <div class="month-sidebar"></div>
+            <div class="month-sidebar month-noviembre"></div>
             <div class="month-content">
                 <div class="month-header">
                     <h2 class="month-title">Noviembre</h2>
@@ -383,22 +817,92 @@
                 </div>
                 
                 <div class="cards-container">
-                    <article class="event-card">
+                    <article class="event-card red">
                         <span class="card-day">1</span>
                         <h3 class="card-title">Día de Todos los Santos</h3>
                     </article>
-                    
-                    <article class="event-card event-card--highlight-yellow">
-                        <span class="card-day">2</span>
-                        <h3 class="card-title">Día de los Muertos</h3>
+
+                    <article class="event-card">
+                        <span class="card-day">Inicios</span>
+                        <ul class="card-events">
+                            <li>Definición del Torneo Clausura de la Liga 1.</li>
+                        </ul>
                     </article>
+
+                    <article class="event-card">
+                        <span class="card-day">3</span>
+                        <ul class="card-events">
+                            <li>Elecciones de medio término EE.UU. para renovar la Cámara de Representantes y un tercio del Senado.</li>
+                        </ul>
+                    </article>
+
+                    <article class="event-card">
+                        <span class="card-day">4 y 5</span>
+                        <ul class="card-events">
+                            <li>Cumbre Iberoamericana de Jefes de Estado y de Gobierno de Madrid (España).</li>
+                        </ul>
+                    </article>
+                    
+                    <article class="event-card event-card--highlight-orange event-card--with-image relative">
+                        <span class="card-day">5 al 8</span>
+                        <ul class="card-events">
+                            <li>Hay Festival en Arequipa.</li>
+                        </ul>
+                        <img src="./img/bg-noviembre-1.png" alt="" width="100%" class="bg-noviembre-1">
+                    </article>
+
+                    <article class="event-card">
+                        <span class="card-day">9 al 20</span>
+                        <ul class="card-events">
+                            <li>COP 31 Conferencia sobre el Cambio Climático en Antalya (Turquía).</li>
+                        </ul>
+                    </article>
+
+                    <article class="event-card">
+                        <span class="card-day">9 al 17</span>
+                        <ul class="card-events">
+                            <li>Fecha FIFA.</li>
+                        </ul>
+                    </article>
+
+                    <article class="event-card">
+                        <span class="card-day">11</span>
+                        <ul class="card-events">
+                            <li>Día de las librerías.</li>
+                        </ul>
+                    </article>
+
+                    <article class="event-card">
+                        <span class="card-day">14</span>
+                        <ul class="card-events">
+                            <li>Segundo año de Chancay.</li>
+                        </ul>
+                    </article>
+
+                    <article class="event-card">
+                        <span class="card-day">18 y 19</span>
+                        <ul class="card-events">
+                            <li>Cumbre Foro de Cooperación Económica Asia-Pacífico APEC en Shenzhen (China).</li>
+                        </ul>
+                    </article>
+
+                    <article class="event-card event-card--highlight-orange">
+                        <span class="card-day">28</span>
+                        <ul class="card-events">
+                            <li>Final Copa Libertadores 2026.</li>
+                            <li>CADE Ejecutivos 2026.</li>
+                            <li>Aprobación de Presupuesto Público 2027.</li>
+                            <li>Grand Theft Auto VI (videojuego).</li>
+                        </ul>
+                    </article>
+
                 </div>
             </div>
         </section>
 
         <!-- Diciembre -->
         <section class="month-section" id="diciembre">
-            <div class="month-sidebar"></div>
+            <div class="month-sidebar month-diciembre"></div>
             <div class="month-content">
                 <div class="month-header">
                     <h2 class="month-title">Diciembre</h2>
@@ -406,15 +910,68 @@
                 </div>
                 
                 <div class="cards-container">
-                    <article class="event-card event-card--highlight-orange">
-                        <span class="card-day">25</span>
-                        <h3 class="card-title">Navidad</h3>
+
+                    <article class="event-card">
+                        <span class="card-day">2 al 4</span>
+                        <ul class="card-events">
+                            <li>Conferencia de la ONU sobre el Agua en Abu Dabi (Emiratos Árabes Unidos).</li>
+                        </ul>
+                    </article>
+
+                    <article class="event-card">
+                        <span class="card-day">5</span>
+                        <ul class="card-events">
+                            <li>100 años de la muerte del pintor Claude Monet.</li>
+                        </ul>
+                    </article>
+
+                    <article class="event-card red">
+                        <span class="card-day">8</span>
+                        <ul class="card-events">
+                            <li>Día de la Inmaculada Concepción.</li>
+                        </ul>
+                    </article>
+
+                    <article class="event-card red">
+                        <span class="card-day">9</span>
+                        <ul class="card-events">
+                            <li>Batalla de Ayacucho.</li>
+                        </ul>
+                    </article>
+
+                    <article class="event-card">
+                        <span class="card-day">Quincena</span>
+                        <ul class="card-events">
+                            <li>Reporte de inflación (fin de año, con perspectivas).</li>
+                        </ul>
                     </article>
                     
-                    <article class="event-card event-card--highlight-yellow">
-                        <span class="card-day">31</span>
-                        <h3 class="card-title">Año Nuevo</h3>
+                    <article class="event-card event-card--highlight-orange event-card--with-image relative">
+                        <span class="card-day">18</span>
+                        <ul class="card-events">
+                            <li>Estreno de Avengers Doomsday.</li>
+                            <li>Estreno de Dune, parte 3.</li>
+                        </ul>
+                        <img src="./img/bg-diciembre-1.webp" alt="" width="100%" class="bg-diciembre-1">
                     </article>
+
+                    <article class="event-card red event-card--with-image relative">
+                        <span class="card-day">25</span>
+                        <ul class="card-events">
+                            <li>Navidad.</li>
+                        </ul>
+                        <img src="./img/bg-diciembre-2.jpg" alt="" width="100%" class="bg-diciembre-2">
+                    </article>
+
+                    <article class="event-card event-card--highlight-orange">
+                        <span class="card-day">Diciembre</span>
+                        <ul class="card-events">
+                            <li>La Casa del Dragón, temporada 3, serie.</li>
+                            <li>Festival Vivo x el Rock, concierto musical.</li>
+                            <li>La Gran Sangre, película.</li>
+                        </ul>
+                    </article>
+
                 </div>
             </div>
         </section>
