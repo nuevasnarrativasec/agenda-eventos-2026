@@ -404,8 +404,7 @@
                 padding: 2rem 1rem 3rem;
             }
 
-            .event-card {
-                width: 180px;
+            .event-card {               
                 min-height: 200px;
             }
 
@@ -413,22 +412,22 @@
                 padding: 2rem 0;
             }
         }
+       
+        @media (max-width: 640px) {
 
-        @media (max-width: 480px) {
-            .event-card {
-                width: 160px;
-                min-height: 180px;
-                padding: 1rem;
-            }
-
-            .card-day {
+            .month-title{
                 font-size: 2rem;
             }
-
-            .card-events {
-                font-size: 0.75rem;
+            .card-events{
+                font-size: 1rem;
             }
+            .event-card{
+                width: 80%;
+            }
+
         }
+
+        
 
         /* Animations */
         @keyframes fadeInUp {
