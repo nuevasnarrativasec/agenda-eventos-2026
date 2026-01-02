@@ -17,6 +17,14 @@
 <body>
     <!-- Header -->
     <header class="header">
+        <div id="social">
+            <button id="fb" class="sharer button" data-sharer="facebook" data-hashtag="" data-url="#">Facebook</button>
+
+            <button id="wst" class="sharer button" data-sharer="whatsapp" data-title="El Comercio" data-url="#">Whatsapp</button>
+
+            <button id="tw" class="sharer button" data-sharer="twitter" data-title="El Comercio" data-hashtags="" data-via='elcomercio_peru' data-url="#">Twitter</button>
+        </div>
+
         <div class="logo">
             <img src="./img/logo-comercio.png" alt="" width="100%">
         </div>
@@ -1024,6 +1032,41 @@
         </p>
     </div>
 
+    <!-- compartir -->
+    <script>
+        function shareUrl(event) {
+            const button = event.target;
+            const url = button.getAttribute('data-url');
+            
+            const sharer = button.getAttribute('data-sharer');
+            let shareUrl = '';
+
+            switch (sharer) {
+            case 'facebook':
+                const fbHashtag = button.getAttribute('data-hashtag') || '';
+                shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}&hashtag=${encodeURIComponent(fbHashtag)}`;
+                break;
+                
+            case 'whatsapp':
+                const whatsappTitle = button.getAttribute('data-title');
+                shareUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(whatsappTitle + ' ' + url)}`;
+                break;
+                
+            case 'twitter':
+                const twitterTitle = button.getAttribute('data-title');
+                const twitterHashtags = button.getAttribute('data-hashtags');
+                const twitterVia = button.getAttribute('data-via');
+                shareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(twitterTitle)}&url=${encodeURIComponent(url)}&hashtags=${twitterHashtags}&via=${twitterVia}`;
+                break;
+            }
+
+            window.open(shareUrl, '_blank');
+        }
+
+        document.querySelectorAll('.sharer').forEach(button => {
+            button.addEventListener('click', shareUrl);
+        });
+    </script>
 
     <script>
         // Smooth scroll to month on dropdown change
