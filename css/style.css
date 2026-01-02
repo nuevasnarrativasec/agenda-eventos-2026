@@ -95,7 +95,7 @@
         }
 
         .header h2{
-            font: 1.5rem/1 "Noto Serif KR", serif;
+            font: 1.5rem/1.2 "Noto Serif KR", serif;
             font-weight: 400;
             margin: 10px auto 20px;
         }
@@ -457,10 +457,13 @@
                 font-size: 2rem;
             }
             .card-events{
-                font-size: 1rem;
+                font-size: 1.1rem;
             }
             .event-card{
                 width: 80%;
+            }
+            .header h2{
+                padding: 0 20px;
             }
 
         }
