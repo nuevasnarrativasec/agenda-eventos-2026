@@ -80,18 +80,24 @@
             }
 
         .header-subtitle {
-            font: 1.5rem/1.3 "Noto Serif KR", serif;
-            font-weight: 600;
+            font: 1.7rem/1.2 "Noto Serif KR", serif;
+            font-weight: 800;
             color: var(--color-text-dark);
             margin: 0 auto;
-            max-width: 350px;
+            max-width: 250px;
         }
 
         .header-year {
-            font: 6rem/1.1 "Noto Serif KR", serif;
+            font: 6rem/1 "Noto Serif KR", serif;
             font-weight: 800;
             color: var(--color-text-dark);
-            margin: 5px auto;
+            margin: 0 auto;
+        }
+
+        .header h2{
+            font: 1.5rem/1 "Noto Serif KR", serif;
+            font-weight: 400;
+            margin: 10px auto 20px;
         }
 
         .filter-container {
@@ -504,12 +510,12 @@
 .bg-enero-3{
     bottom: 0;
     left: 14px;
-    max-width: 175px;
+    max-width: 200px;
     position: absolute;    
 }
 .bg-febrero-2{
     bottom: 5px;
-    max-width: 75px;
+    max-width: 120px;
     position: absolute;
     right: 10px;
 }
