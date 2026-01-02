@@ -11,15 +11,15 @@
 
 @font-face {
     font-family: 'Prelo regular';
-    src: url('../fonts/Prelo-Medium.woff2') format('woff2'),
-        url('../fonts/Prelo-Medium.woff') format('woff');
+    src: url('https://nuevasnarrativasec.github.io/agenda-eventos-2026/fonts/Prelo-Medium.woff2') format('woff2'),
+        url('https://nuevasnarrativasec.github.io/agenda-eventos-2026/fonts/Prelo-Medium.woff') format('woff');
     font-weight: 500;
 }
 
 @font-face {
     font-family: 'Prelo black';
-    src: url('../fonts/Prelo-Black.woff2') format('woff2'),
-        url('../fonts/Prelo-Black.woff') format('woff');
+    src: url('https://nuevasnarrativasec.github.io/agenda-eventos-2026/fonts/Prelo-Black.woff2') format('woff2'),
+        url('https://nuevasnarrativasec.github.io/agenda-eventos-2026/fonts/Prelo-Black.woff') format('woff');
     font-weight: 900;
 }
 
@@ -100,7 +100,7 @@
 
         /* Header */
         .header {
-            background: url('../img/bg-portada.jpg') no-repeat center bottom;
+            background: url('https://nuevasnarrativasec.github.io/agenda-eventos-2026/img/bg-portada.jpg') no-repeat center bottom;
             background-size: cover;
             height: 90vh;
             padding: 3rem 1.5rem 4rem;
@@ -528,7 +528,7 @@
             }
 
             .header {
-                background: url('../img/bg-portada-movil.jpg') no-repeat center bottom;
+                background: url('https://nuevasnarrativasec.github.io/agenda-eventos-2026/img/bg-portada-movil.jpg') no-repeat center bottom;
                 background-size: cover;
                 height: 100vh;
             }
