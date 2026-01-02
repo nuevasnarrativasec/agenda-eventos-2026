@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200..900&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="https://nuevasnarrativasec.github.io/agenda-eventos-2026/css/style.css?v10">
+    <link rel="stylesheet" href="./css/style.css?v11">
 
      <style>
         /* Ocultar anuncios y elementos no deseados */   
@@ -295,7 +295,7 @@
                 
                 <div class="cards-container">
                     <article class="event-card event-card--highlight-orange">
-                        <h3 class="card-title">Primera quincena: Primer reporte de inflación del año.</h3>
+                        <h3 class="card-title" style="color: #fff; font-size: 1.15rem;">Primera quincena: Primer reporte de inflación del año.</h3>
                     </article>
                     
                     <article class="event-card">
@@ -1167,53 +1167,91 @@
             observer.observe(section);
         });
 
-        // Drag to scroll functionality - versión mejorada
+        // Drag to scroll functionality - versión mejorada con detección de dirección
         const cardsContainers = document.querySelectorAll('.cards-container');
         
         cardsContainers.forEach(container => {
             let isDown = false;
             let isDragging = false;
+            let isHorizontalGesture = null; // null = no determinado, true = horizontal, false = vertical
             let startX;
+            let startY;
             let scrollLeft;
             let lastX;
             let lastTime;
             let velocity = 0;
             let momentumID;
-            const DRAG_THRESHOLD = 5; // Píxeles mínimos para considerar drag
+            const DRAG_THRESHOLD = 8; // Píxeles mínimos para determinar dirección
+            const DIRECTION_LOCK_RATIO = 1.2; // Ratio para determinar dirección dominante
 
             function getX(e) {
                 return e.type.includes('mouse') ? e.pageX : e.touches[0].pageX;
             }
 
+            function getY(e) {
+                return e.type.includes('mouse') ? e.pageY : e.touches[0].pageY;
+            }
+
             function startDrag(e) {
                 isDown = true;
                 isDragging = false;
+                isHorizontalGesture = null; // Reset dirección
                 startX = getX(e);
+                startY = getY(e);
                 lastX = startX;
                 lastTime = Date.now();
                 scrollLeft = container.scrollLeft;
                 velocity = 0;
                 cancelMomentumTracking();
-                
-                // Desactivar scroll-snap durante el drag
-                container.style.scrollSnapType = 'none';
             }
 
             function moveDrag(e) {
                 if (!isDown) return;
                 
                 const x = getX(e);
-                const deltaX = x - startX;
+                const y = getY(e);
+                const deltaX = Math.abs(x - startX);
+                const deltaY = Math.abs(y - startY);
                 
-                // Solo activar modo dragging si se movió más del threshold
-                if (!isDragging && Math.abs(deltaX) > DRAG_THRESHOLD) {
+                // Si aún no hemos determinado la dirección
+                if (isHorizontalGesture === null) {
+                    // Esperar hasta tener suficiente movimiento para determinar dirección
+                    if (deltaX < DRAG_THRESHOLD && deltaY < DRAG_THRESHOLD) {
+                        return;
+                    }
+                    
+                    // Determinar si es gesto horizontal o vertical
+                    if (deltaX > deltaY * DIRECTION_LOCK_RATIO) {
+                        // Gesto principalmente horizontal - tomar control
+                        isHorizontalGesture = true;
+                        container.style.scrollSnapType = 'none';
+                    } else if (deltaY > deltaX * DIRECTION_LOCK_RATIO) {
+                        // Gesto principalmente vertical - dejar que la página haga scroll
+                        isHorizontalGesture = false;
+                        isDown = false;
+                        return;
+                    } else {
+                        // Diagonal - dar prioridad al scroll vertical de la página
+                        isHorizontalGesture = false;
+                        isDown = false;
+                        return;
+                    }
+                }
+                
+                // Si es gesto vertical, no hacer nada
+                if (!isHorizontalGesture) {
+                    return;
+                }
+                
+                // Solo activar modo dragging si es gesto horizontal
+                if (!isDragging && deltaX > DRAG_THRESHOLD) {
                     isDragging = true;
                     container.classList.add('is-dragging');
                 }
                 
                 if (!isDragging) return;
                 
-                // Prevenir selección de texto y comportamiento por defecto
+                // Prevenir scroll vertical solo si es gesto horizontal confirmado
                 if (e.cancelable) {
                     e.preventDefault();
                 }
@@ -1227,15 +1265,15 @@
                 lastX = x;
                 lastTime = now;
                 
-                // Aplicar scroll
-                container.scrollLeft = scrollLeft - deltaX;
+                // Aplicar scroll horizontal
+                container.scrollLeft = scrollLeft - (x - startX);
             }
 
             function endDrag() {
                 if (!isDown) return;
                 isDown = false;
                 
-                if (isDragging) {
+                if (isDragging && isHorizontalGesture) {
                     isDragging = false;
                     container.classList.remove('is-dragging');
                     
@@ -1246,8 +1284,11 @@
                         restoreScrollSnap();
                     }
                 } else {
+                    container.classList.remove('is-dragging');
                     restoreScrollSnap();
                 }
+                
+                isHorizontalGesture = null;
             }
 
             function restoreScrollSnap() {
@@ -1263,7 +1304,7 @@
             container.addEventListener('mouseup', endDrag);
             container.addEventListener('mouseleave', endDrag);
 
-            // Touch events - usar passive: false para poder prevenir default
+            // Touch events - usar passive: false para poder prevenir default cuando sea necesario
             container.addEventListener('touchstart', startDrag, { passive: true });
             container.addEventListener('touchmove', moveDrag, { passive: false });
             container.addEventListener('touchend', endDrag);
